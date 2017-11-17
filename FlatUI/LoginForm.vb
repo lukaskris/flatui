@@ -28,6 +28,7 @@
         ElseIf IsLogin Then
             Dim form As New Form1
             form.SetUsername(username.Text)
+            Me.Hide()
             form.ShowDialog()
             Me.Close()
         ElseIf username.Text <> "" And password.Text <> "" Then
@@ -42,8 +43,9 @@
                         SaveLogin()
                         Dim form As New Form1
                         form.SetUsername(username.Text)
+                        Me.Hide()
                         form.ShowDialog()
-                        Me.Close()
+                        Me.Show()
                     End If
                 Next
             Else

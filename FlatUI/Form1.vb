@@ -153,7 +153,7 @@ Public Class Form1
     End Sub
 
     Private Sub BunifuImageButton5_Click(sender As Object, e As EventArgs) Handles BunifuImageButton5.Click
-        Environment.Exit(0)
+        Me.Close()
     End Sub
 
     Private Sub BunifuImageButton6_Click(sender As Object, e As EventArgs) Handles BunifuImageButton6.Click
@@ -182,6 +182,5 @@ Public Class Form1
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         newThread.Abort()
-        Process.GetCurrentProcess.Kill()
     End Sub
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class PlayerMain
+﻿Imports MySql.Data.MySqlClient
+
+Public Class PlayerMain
 
     Dim mydb As New mySqlDB
     Dim result As String = ""
@@ -34,7 +36,7 @@
                         dataDirectory = String.Format("{0}\resource\video\", Environment.CurrentDirectory)
                     End If
                     CheckFIleExists(dataDirectory + url)
-                    IncrementWatch()
+                    IncrementWatch(LessonKey)
                 Next
             End If
         Else
@@ -65,9 +67,14 @@
         End If
     End Sub
 
-    Private Sub IncrementWatch()
+    Private Sub IncrementWatch(LessonKey As String)
         Try
+            Dim sqlCommand As New MySqlCommand
+            sqlCommand.Parameters.AddWithValue("@id", LessonKey)
+            mydb.executeDMLSQL("UPDATE LESSON SET VIEW=VIEW+1 WHERE id = @id", sqlCommand, result)
+            If (result = "SUCCESS") Then
 
+            End If
         Catch ex As Exception
 
         End Try

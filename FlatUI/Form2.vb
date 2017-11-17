@@ -37,6 +37,5 @@
 
     Private Sub Form2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
-        Process.GetCurrentProcess.Kill()
     End Sub
 End Class
