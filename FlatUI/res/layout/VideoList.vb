@@ -18,20 +18,16 @@
             If dataset.Rows.Count > 0 Then
                 For Each row As DataRow In dataset.Rows
                     Dim rowcat As VideoRow = New VideoRow()
+                    rowcat.Key = row("id")
                     rowcat.Title.Text = row("title")
                     rowcat.totalView.Text = row("view").ToString + " Viewed"
                     Dim length As Integer = row("length")
                     rowcat.lengthText.Text = (length / 60).ToString + " Minutes"
                     rowcat.Dock = DockStyle.Top
-
-                    AddHandler rowcat.Panel2.Click, AddressOf Me.VideoViewClick
                     Panel1.Controls.Add(rowcat)
                 Next
             End If
         End If
     End Sub
 
-    Private Sub VideoViewClick(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        MessageBox.Show("here")
-    End Sub
 End Class

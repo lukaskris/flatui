@@ -72,9 +72,6 @@ Public Class PlayerMain
             Dim sqlCommand As New MySqlCommand
             sqlCommand.Parameters.AddWithValue("@id", LessonKey)
             mydb.executeDMLSQL("UPDATE LESSON SET VIEW=VIEW+1 WHERE id = @id", sqlCommand, result)
-            If (result = "SUCCESS") Then
-
-            End If
         Catch ex As Exception
 
         End Try

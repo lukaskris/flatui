@@ -111,14 +111,17 @@
     End Sub
 
     Private Sub BunifuCustomLabel4_Click(sender As Object, e As EventArgs) Handles BunifuCustomLabel4.Click
-        My.Forms.Form1.ShowVideoList(0)
+        Dim form As Form1 = Me.Parent.Parent
+        form.ShowVideoList(0)
     End Sub
 
     Private Sub BunifuCustomLabel6_Click(sender As Object, e As EventArgs) Handles BunifuCustomLabel6.Click
-        My.Forms.Form1.ShowVideoList(2)
+        Dim form As Form1 = Me.Parent.Parent
+        form.ShowVideoList(2)
     End Sub
 
     Private Sub BunifuCustomLabel5_Click(sender As Object, e As EventArgs) Handles BunifuCustomLabel5.Click
-        My.Forms.Form1.ShowVideoList(1)
+        Dim form As Form1 = Me.Parent.Parent
+        form.ShowVideoList(3)
     End Sub
 End Class
